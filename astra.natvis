@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+    <Type Name="astra::mem::runtime_array&lt;*&gt;">
+        <Intrinsic Name="length"
+                   Expression="length"/>
+        <Intrinsic Name="offset"
+                   Expression="offset"/>
+        <Intrinsic Name="ptr"
+                   Expression="ptr._Ptr"/>
+        <DisplayString>{{ Length={length()} }}</DisplayString>
+        <Expand>
+            <Item Name="[length]" ExcludeView="simple">length()</Item>
+            <Item Name="[ptr]" ExcludeView="simple">ptr()</Item>
+            <Item Name="[offset]" ExcludeView="simple">offset()</Item>
+            <ArrayItems>
+                <Size>length()</Size>
+                <ValuePointer>ptr()</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+    <Type Name="astra::io::indent">
+        <Intrinsic Name="level"
+                   Expression="level"/>
+        <DisplayString>{{ Level={level()} }}</DisplayString>
+    </Type>
+</AutoVisualizer>
